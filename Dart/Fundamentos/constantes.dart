@@ -7,7 +7,7 @@ main() {
   const PI = 3.1415;
 
   final texto = stdin.readLineSync(); // para pegar texto digitado
-  final double raio = double.parse(texto);
+  final double raio = double.parse(texto!);
   final area = PI * raio * raio;
   print("O raio é " + area.toString());
 }
