@@ -14,9 +14,9 @@ main() {
   bool ehFragil = true;
   bool ehCaro = false;
 
-  print(ehFragil && ehCaro); // e
-  print(ehFragil || ehCaro); // ou
-  print(
-    ehFragil ^ ehCaro,
-  ); // ou exclusivo ou seja cada valor deve ser diferente para ser true
+  print(ehFragil && ehCaro); // and -> e
+  print(ehFragil || ehCaro); // or -> ou
+  print(ehFragil ^ ehCaro); // xor -> ou exclusivo ou seja cada valor deve ser
+  //diferente para ser true
+  print(!ehFragil); // not -> prefixo
 }
