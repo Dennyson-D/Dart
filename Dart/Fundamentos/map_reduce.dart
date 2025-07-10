@@ -9,6 +9,12 @@ main() {
   ];
 
   String Function(Map) pegarNome = (aluno) => aluno['nome'];
+  int Function(String) qtdeLetra = (texto) => texto.length;
+  int Function(int) dobro = (numero) => numero * 2;
   var nomes = alunos.map(pegarNome);
   print(nomes);
+
+  var qtdeDeLetras = alunos.map(pegarNome).map(qtdeLetra).map(dobro);
+
+  print(qtdeDeLetras);
 }

@@ -5,6 +5,7 @@ List<double>? filtrar<e>(List<double> lista, bool Function(double) fn) {
       listaFiltrada.add(elemento);
     }
   }
+  return null;
 }
 
 main() {
