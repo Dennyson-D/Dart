@@ -2,6 +2,10 @@ class Data {
   int? dia;
   int? mes;
   int? ano;
+
+  obter() {
+    print('$dia/$mes/$ano');
+  }
 }
 
 main() {
@@ -15,6 +19,11 @@ main() {
   dataCompra.mes = 2;
   dataCompra.ano = 1999;
 
+  // sem método
   print('Niver ${dataaniversario.dia}/${dataaniversario.mes}/${dataaniversario.ano}');
   print('Compra ${dataCompra.dia}/${dataCompra.mes}/${dataCompra.ano}');
+
+  // com método
+  dataaniversario.obter();
+  dataCompra.obter();
 }
