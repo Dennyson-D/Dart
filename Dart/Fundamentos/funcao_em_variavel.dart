@@ -1,4 +1,5 @@
 main() {
+  // ignore: unused_local_variable
   int a = 2;
   // tipo nome = valor
 
