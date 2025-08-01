@@ -18,8 +18,7 @@ main() {
     'João': '55 (41) 9999-11111',
     'Maria': '55 (21) 9874-12345',
     'Pedro': '55 (41) 9977-54321',
-    'João':
-        '55 (77) 7777-77777', // como chave 'João' é repetida, sempre fica o último valor
+    'João': '55 (77) 7777-77777', // como chave 'João' é repetida, sempre fica o último valor
   };
 
   print(telefones is Map);
@@ -33,7 +32,7 @@ main() {
   // Sets
 
   var times = {'Flamengo', 'Real Madrid', 'Bayer', 'Liverpool'};
-  // Obs:(Sets não tme indice, então não pode usar exemplo: times.[0])
+  // Obs:(Sets não tem indice, então não pode usar exemplo: times.[0])
   times.add('Milan');
   print(times is Set);
   print(times.length);
