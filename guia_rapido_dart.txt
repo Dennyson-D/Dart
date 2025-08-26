@@ -1,0 +1,78 @@
+
+Guia de Bolso Dart
+==================
+
+1. Estrutura Básica
+-------------------
+void main() {
+  print('Olá, Dart!');
+}
+
+2. Variáveis e Tipos
+--------------------
+int idade = 30;
+double altura = 1.75;
+String nome = "João";
+bool ativo = true;
+var cidade = "Curitiba";
+const PI = 3.14;  // Constante conhecida em compilação
+final data = DateTime.now(); // Definida uma única vez
+
+3. Controle de Fluxo
+--------------------
+if (idade >= 18) {...} else {...}
+for (int i = 0; i < 5; i++) {...}
+while (condicao) {...}
+do {...} while (condicao);
+
+4. Funções
+----------
+int soma(int a, int b) => a + b;
+void mostrar({String? texto, int vezes = 1}) {...}
+
+5. Coleções
+-----------
+List<String> nomes = ['Ana', 'Carlos'];
+Set<int> numeros = {1, 2, 3};
+Map<String, int> idades = {'Ana': 25};
+
+6. Null Safety
+--------------
+String? sobrenome = null;
+print(sobrenome ?? "Sem sobrenome");
+
+7. Classes e Objetos
+--------------------
+class Pessoa {
+  String nome;
+  int idade;
+  Pessoa(this.nome, this.idade);
+  void falar() => print("Olá, meu nome é $nome");
+}
+
+8. Herança
+----------
+class Animal { void som() => print("Som"); }
+class Cachorro extends Animal { @override void som() => print("Latindo"); }
+
+9. Assíncrono
+-------------
+Future<void> buscar() async {
+  await Future.delayed(Duration(seconds: 2));
+  print("Pronto");
+}
+
+10. Erros
+---------
+try { ... } catch (e) { ... } finally { ... }
+
+11. Importações
+---------------
+import 'dart:math';
+import 'arquivo.dart';
+
+12. Extras
+----------
+- Generics: List<int> lista = [1, 2];
+- Extensões: extension Nome on String { ... }
+- Mixins: mixin Habilidade { ... }

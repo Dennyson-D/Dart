@@ -1,0 +1,177 @@
+
+Guia de Bolso do Dart com Exemplos
+==================================
+
+1. Estrutura Básica
+-------------------
+void main() {
+  print('Olá, Dart!');
+}
+
+2. Variáveis e Tipos
+--------------------
+int idade = 30;                  // Número inteiro
+double altura = 1.75;            // Número decimal
+String nome = "João";            // Texto
+bool ativo = true;               // Booleano
+var cidade = "Curitiba";         // Tipo inferido
+
+// Constantes
+const PI = 3.14;                  // Valor conhecido em compilação
+final data = DateTime.now();      // Valor definido apenas 1 vez
+
+// Diferença entre final e const:
+/*
+- const: o valor é fixo e definido em tempo de compilação (imutável para sempre)
+- final: o valor é definido apenas 1 vez, mas pode ser calculado em tempo de execução
+Exemplo:
+const x = 10; // sempre será 10
+final y = DateTime.now(); // definido no momento que o código roda
+*/
+
+3. Controle de Fluxo
+--------------------
+if (idade >= 18) {
+  print("Maior de idade");
+} else {
+  print("Menor de idade");
+}
+
+for (int i = 0; i < 5; i++) {
+  print("i = $i");
+}
+
+while (idade > 0) {
+  idade--;
+}
+
+do {
+  print("Rodando...");
+} while (false);
+
+switch (cidade) {
+  case "Curitiba":
+    print("Paraná");
+    break;
+  default:
+    print("Outra cidade");
+}
+
+4. Funções
+----------
+int soma(int a, int b) {
+  return a + b;
+}
+
+int multiplicar(int a, int b) => a * b;
+
+void mostrarMensagem({String? texto, int vezes = 1}) {
+  for (var i = 0; i < vezes; i++) {
+    print(texto);
+  }
+}
+
+5. Coleções
+-----------
+List<String> nomes = ['Ana', 'Carlos'];
+nomes.add('João');
+
+Set<int> numeros = {1, 2, 3}; // sem valores repetidos
+
+Map<String, int> idades = {'Ana': 25};
+idades['Maria'] = 20;
+
+6. Null Safety
+--------------
+String? sobrenome = null;
+sobrenome ??= "Desconhecido"; // atribui se for nulo
+print(sobrenome ?? "Sem sobrenome"); // valor padrão
+// ?. evita erro se for nulo
+sobrenome?.toUpperCase();
+
+7. Classes e Objetos
+--------------------
+class Pessoa {
+  String nome;
+  int idade;
+  Pessoa(this.nome, this.idade);
+  void falar() => print("Olá, meu nome é $nome");
+}
+
+var p = Pessoa("João", 25);
+p.falar();
+
+8. Herança e Interfaces
+-----------------------
+class Animal {
+  void emitirSom() => print("Som genérico");
+}
+class Cachorro extends Animal {
+  @override
+  void emitirSom() => print("Latindo");
+}
+var dog = Cachorro();
+dog.emitirSom();
+
+9. Mixins
+---------
+mixin Nadador {
+  void nadar() => print("Nadando");
+}
+class Peixe with Nadador {}
+var peixe = Peixe();
+peixe.nadar();
+
+10. Extensões
+-------------
+extension StringExt on String {
+  String primeiraMaiuscula() =>
+      this[0].toUpperCase() + substring(1);
+}
+print("dart".primeiraMaiuscula()); // Dart
+
+11. Generics
+------------
+List<int> numerosInt = [1, 2, 3];
+
+12. Funções Assíncronas
+-----------------------
+Future<void> buscarDados() async {
+  await Future.delayed(Duration(seconds: 2));
+  print("Dados recebidos");
+}
+void main() async {
+  print("Iniciando");
+  await buscarDados();
+  print("Fim");
+}
+
+13. Tratamento de Erros
+-----------------------
+try {
+  int resultado = 10 ~/ 0; // erro
+} catch (e) {
+  print("Erro: $e");
+} finally {
+  print("Sempre executa");
+}
+
+14. Importações
+---------------
+import 'dart:math';
+import 'meu_arquivo.dart';
+
+15. Operadores Úteis
+--------------------
+??   -> valor padrão
+?.   -> acesso seguro
+??=  -> atribui se nulo
+~/   -> divisão inteira
+
+16. Compilação e Execução
+-------------------------
+Executar:
+dart run arquivo.dart
+
+Compilar para web (JavaScript):
+dart compile js arquivo.dart
